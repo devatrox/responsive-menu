@@ -5,13 +5,16 @@
     "Jason Nickel"
   ],
   "main": [
+    "dist/jquery.responsive-menu.min.css",
     "dist/jquery.responsive-menu.css",
+    "dist/jquery.responsive-menu.min.js",
     "dist/jquery.responsive-menu.js"
   ],
   "ignore": [
     "bower_components",
     "node_modules",
-    "test"
+    "test",
+    ".*"
   ],
   "dependencies": {
     "jquery": "~1.10.2"
