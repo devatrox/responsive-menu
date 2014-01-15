@@ -7,7 +7,7 @@ A very simple jQuery plugin for responsive menus
 
 Two options:
 
-* With Bower: `bower install jquery.responsive-menu --save`
+* With [Bower](http://bower.io/): `bower install jquery.responsive-menu --save`
 * Download the [latest release](https://github.com/devatrox/jquery.responsive-menu/releases)
 
 ## Usage
