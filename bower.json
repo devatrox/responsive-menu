@@ -1,0 +1,19 @@
+{
+  "name": "jquery.responsive-menu",
+  "version": "1.0.0",
+  "authors": [
+    "Jason Nickel"
+  ],
+  "main": [
+    "dist/jquery.responsive-menu.css",
+    "dist/jquery.responsive-menu.js"
+  ],
+  "ignore": [
+    "bower_components",
+    "node_modules",
+    "test"
+  ],
+  "dependencies": {
+    "jquery": "~1.10.2"
+  }
+}

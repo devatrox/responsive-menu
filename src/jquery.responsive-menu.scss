@@ -1,0 +1,95 @@
+$rm-button-color: #111 !default;
+$rm-button-highlight-color: #ff4136 !default;
+$rm-menu-color: #fff !default;
+$rm-menu-highlight-color: #ddd !default;
+
+%rm-reset {
+  position: relative;
+  width: auto;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  left: auto;
+  right: auto;
+  top: auto;
+  bottom: auto;
+  background: none;
+  float: none;
+  outline: 0;
+  text-shadow: none;
+  box-shadow: none;
+  list-style: none;
+  font-size: 100%;
+  line-height: 0.8;
+}
+
+#responsiveMenu {
+  position: relative;
+
+  .rm-toggle {
+    display: none;
+  }
+
+  &.rm-small {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    max-width: 300px;
+
+    > ul {
+      display: none;
+      z-index: 100;
+    }
+
+    ul {
+      @extend %rm-reset;
+    }
+
+    li {
+      @extend %rm-reset;
+      text-align: left;
+      display: block;
+
+      a {
+        @extend %rm-reset;
+        background-color: $rm-menu-color;
+        color: #111;
+        padding: 0.5em;
+        display: block;
+
+        &:hover {
+          background-color: $rm-menu-highlight-color;
+        }
+      }
+
+      li a {
+        padding-left: 1em;
+      }
+    }
+
+    .rm-toggle {
+      @extend %rm-reset;
+      background-color: $rm-button-color;
+      color: white;
+      cursor: pointer;
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 0.5em;
+      z-index: 200;
+      display: block;
+
+      &:hover {
+        background-color: $rm-button-highlight-color;
+      }
+    }
+
+    &.rm-expanded {
+      > ul {
+        display: block;
+      }
+    }
+  }
+}
