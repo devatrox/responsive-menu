@@ -14,12 +14,12 @@ Two options:
 
 ### Stylesheet
 
-* Include the Stylesheet in your <head>
+* Include the Stylesheet in your `<head>`
 * Or import the SCSS file via @import
 
 ### Script
 
-* Include the Script in <head>
+* Include the Script in `<head>`
 * Don't forget to include [jQuery](http://jquery.com/) before that!
 
 ## Markup
