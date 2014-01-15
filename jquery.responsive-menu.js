@@ -3,8 +3,7 @@
   $.fn.responsiveMenu = function(options) {
 
     var settings = $.extend({
-      breakWidth: 600,
-      theme: 'flat-red'
+      breakWidth: 600
     }, options);
 
     var $this = $(this);
