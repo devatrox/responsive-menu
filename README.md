@@ -23,19 +23,20 @@ Two options:
 * Don't forget to include [jQuery](http://jquery.com/) before that!
 
 ## Markup
-
-  &lt;script&gt;
-    $(function(){
-      $('#menu').responsiveMenu({
-        breakWidth: 800 // optional (default: 600)
-      });
+```
+<script>
+  $(function(){
+    $('#menu').responsiveMenu({
+      breakWidth: 800 // optional (default: 600)
     });
-  &lt;/script&gt;
+  });
+</script>
 
-  &lt;ul id="menu"&gt;
-    &lt;li&gt;&lt;a href="#"&gt;&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href="#"&gt;&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href="#"&gt;&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href="#"&gt;&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href="#"&gt;&lt;/a&gt;&lt;/li&gt;
-  &lt;/ul&gt;
+<ul id="menu">
+  <li><a href="#"></a></li>
+  <li><a href="#"></a></li>
+  <li><a href="#"></a></li>
+  <li><a href="#"></a></li>
+  <li><a href="#"></a></li>
+</ul>
+```
