@@ -18,7 +18,8 @@
   box-shadow: none;
   list-style: none;
   font-size: 100%;
-  line-height: 0.8; }
+  line-height: 0.8;
+  text-align: left; }
 
 #responsiveMenu {
   position: relative; }
@@ -39,12 +40,14 @@
       #responsiveMenu.rm-small li a {
         background-color: white;
         color: #111;
-        padding: 0.5em;
+        padding: 0.7em;
         display: block; }
         #responsiveMenu.rm-small li a:hover {
           background-color: #dddddd; }
+      #responsiveMenu.rm-small li ul {
+        display: block; }
       #responsiveMenu.rm-small li li a {
-        padding-left: 1em; }
+        padding-left: 1.4em; }
     #responsiveMenu.rm-small .rm-toggle {
       background-color: #111111;
       color: white;
@@ -52,7 +55,7 @@
       position: absolute;
       top: 0;
       right: 0;
-      padding: 0.5em;
+      padding: 0.7em;
       z-index: 200;
       display: block; }
       #responsiveMenu.rm-small .rm-toggle:hover {

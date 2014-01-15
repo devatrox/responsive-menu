@@ -2,6 +2,7 @@ $rm-button-color: #111 !default;
 $rm-button-highlight-color: #ff4136 !default;
 $rm-menu-color: #fff !default;
 $rm-menu-highlight-color: #ddd !default;
+$rm-padding: 0.7em !default;
 
 %rm-reset {
   position: relative;
@@ -22,6 +23,7 @@ $rm-menu-highlight-color: #ddd !default;
   list-style: none;
   font-size: 100%;
   line-height: 0.8;
+  text-align: left;
 }
 
 #responsiveMenu {
@@ -56,7 +58,7 @@ $rm-menu-highlight-color: #ddd !default;
         @extend %rm-reset;
         background-color: $rm-menu-color;
         color: #111;
-        padding: 0.5em;
+        padding: $rm-padding;
         display: block;
 
         &:hover {
@@ -64,8 +66,12 @@ $rm-menu-highlight-color: #ddd !default;
         }
       }
 
+      ul {
+        display: block;
+      }
+
       li a {
-        padding-left: 1em;
+        padding-left: $rm-padding * 2;
       }
     }
 
@@ -77,7 +83,7 @@ $rm-menu-highlight-color: #ddd !default;
       position: absolute;
       top: 0;
       right: 0;
-      padding: 0.5em;
+      padding: $rm-padding;
       z-index: 200;
       display: block;
 
