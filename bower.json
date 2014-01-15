@@ -14,9 +14,12 @@
     "bower_components",
     "node_modules",
     "test",
-    ".*"
+    "**/.*",
+    "tests"
   ],
   "dependencies": {
     "jquery": "~1.10.2"
-  }
+  },
+  "homepage": "https://github.com/devatrox/jquery.responsive-menu",
+  "license": "MIT"
 }
