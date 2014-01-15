@@ -1,14 +1,15 @@
 {
   "name": "jquery.responsive-menu",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "authors": [
     "Jason Nickel"
   ],
   "main": [
-    "dist/jquery.responsive-menu.min.css",
-    "dist/jquery.responsive-menu.css",
-    "dist/jquery.responsive-menu.min.js",
-    "dist/jquery.responsive-menu.js"
+    "jquery.responsive-menu.scss",
+    "jquery.responsive-menu.min.css",
+    "jquery.responsive-menu.css",
+    "jquery.responsive-menu.min.js",
+    "jquery.responsive-menu.js"
   ],
   "ignore": [
     "bower_components",
@@ -18,7 +19,7 @@
     "tests"
   ],
   "dependencies": {
-    "jquery": "~1.10.2"
+    "jquery": "~1.8.3"
   },
   "homepage": "https://github.com/devatrox/jquery.responsive-menu",
   "license": "MIT"

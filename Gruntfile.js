@@ -7,43 +7,35 @@ module.exports = function(grunt) {
     },
     sass: {
       options: {
-        banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("isoDateTime") %> */\n'
+        banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("dd-mm-yyyy") %> */\n'
       },
       dev: {
         options: {
           noCache: true
         },
         files: {
-          'dist/jquery.responsive-menu.css': ['src/jquery.responsive-menu.scss']
+          'jquery.responsive-menu.css': ['jquery.responsive-menu.scss']
         }
-      }
-    },
-    copy: {
-      dist: {
-        expand: true,
-        cwd: 'src/',
-        src: 'jquery.responsive-menu.js',
-        dest: 'dist/'
       }
     },
     uglify: {
       options: {
-        banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("isoDateTime") %> */\n'
+        banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("dd-mm-yyyy") %> */\n'
       },
       dist: {
         files: {
-          'dist/jquery.responsive-menu.min.js': ['dist/jquery.responsive-menu.js']
+          'jquery.responsive-menu.min.js': ['jquery.responsive-menu.js']
         }
       }
     },
     cssmin: {
       options: {
         keepSpecialComments: 0,
-        banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("isoDateTime") %> */\n'
+        banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("dd-mm-yyyy") %> */\n'
       },
       dist: {
         files: {
-          'dist/jquery.responsive-menu.min.css': ['dist/jquery.responsive-menu.css']
+          'jquery.responsive-menu.min.css': ['jquery.responsive-menu.css']
         }
       }
     }
@@ -53,6 +45,6 @@ module.exports = function(grunt) {
   require('load-grunt-tasks')(grunt);
 
   grunt.registerTask('default', ['sass:dev', 'jshint:dev']);
-  grunt.registerTask('dist', ['sass:dev', 'copy:dist', 'uglify:dist', 'cssmin:dist']);
+  grunt.registerTask('dist', ['sass:dev', 'uglify:dist', 'cssmin:dist']);
 
 };
