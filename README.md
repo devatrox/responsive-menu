@@ -24,18 +24,18 @@ Two options:
 
 ## Markup
 
-  <script>
+  &lt;script&gt;
     $(function(){
       $('#menu').responsiveMenu({
         breakWidth: 800 // optional (default: 600)
       });
     });
-  </script>
+  &lt;/script&gt;
 
-  <ul id="menu">
-    <li><a href="#"></a></li>
-    <li><a href="#"></a></li>
-    <li><a href="#"></a></li>
-    <li><a href="#"></a></li>
-    <li><a href="#"></a></li>
-  </ul>
+  &lt;ul id="menu"&gt;
+    &lt;li&gt;&lt;a href="#"&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
