@@ -8,7 +8,7 @@
 
     var $this = $(this);
 
-    $this.wrap('<div id="responsiveMenu" class="rm-theme-' + settings.theme + '"></div>');
+    $this.wrap('<div id="responsiveMenu"></div>');
 
     var $wrap = $this.parent();
 
