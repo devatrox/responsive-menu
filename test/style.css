@@ -1,0 +1,79 @@
+/*! jquery.responsive-menu - v1.1.3 - 21-01-2014 */
+
+#responsiveMenu .rm-toggle, #responsiveMenu.rm-small ul, #responsiveMenu.rm-small li, #responsiveMenu.rm-small li a {
+  position: relative;
+  width: auto;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  left: auto;
+  right: auto;
+  top: auto;
+  bottom: auto;
+  background: none;
+  float: none;
+  outline: 0;
+  text-shadow: none;
+  list-style: none;
+  font-size: 100%;
+  line-height: 0.8;
+  text-align: left; }
+
+#responsiveMenu {
+  position: relative; }
+  #responsiveMenu .rm-toggle {
+    display: none;
+    background-color: #333333;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.8em;
+    z-index: 200;
+    border-radius: 3px; }
+    #responsiveMenu .rm-toggle:hover {
+      background-color: #0074d9; }
+    #responsiveMenu .rm-toggle .label {
+      text-transform: uppercase;
+      font-size: 0.9em;
+      margin-right: 0.5em; }
+  #responsiveMenu.rm-small {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    max-width: 300px; }
+    #responsiveMenu.rm-small > ul {
+      display: none;
+      z-index: 100;
+      border-radius: 3px;
+      overflow: hidden; }
+    #responsiveMenu.rm-small li {
+      text-align: left;
+      display: block; }
+      #responsiveMenu.rm-small li a {
+        background-color: rgba(255, 255, 255, 0.9);
+        color: #111;
+        padding: 0.8em;
+        display: block; }
+        #responsiveMenu.rm-small li a:hover {
+          background-color: #dddddd; }
+      #responsiveMenu.rm-small li ul {
+        display: block; }
+      #responsiveMenu.rm-small li li a {
+        padding-left: 1.6em; }
+    #responsiveMenu.rm-small .rm-toggle {
+      display: block; }
+    #responsiveMenu.rm-small.rm-expanded > ul {
+      display: block; }
+
+body {
+  background: #ccc;
+  font-family: sans-serif;
+  margin: 10px;
+  position: relative; }
+
+.rm-small > ul {
+  box-shadow: rgba(0, 0, 0, 0.2) 0 1px 6px; }

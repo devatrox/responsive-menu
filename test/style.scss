@@ -1,0 +1,19 @@
+$rm-button-color: #333;
+$rm-button-highlight-color: #0074d9;
+$rm-menu-color: rgba(white, 0.9);
+$rm-menu-highlight-color: #ddd;
+$rm-padding: 0.8em;
+$rm-radius: 3px;
+
+@import "../jquery.responsive-menu";
+
+body {
+  background: #ccc;
+  font-family: sans-serif;
+  margin: 10px;
+  position: relative;
+}
+
+.rm-small > ul {
+  box-shadow: rgba(black, 0.2) 0 1px 6px;
+}

@@ -2,16 +2,15 @@
 <html>
 <head>
   <title>jquery.responsive-menu Test</title>
-  <link rel="stylesheet" href="../jquery.responsive-menu.css">
-  <style>
-    body { background: #ccc; }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  <link rel="stylesheet" href="style.css">
   <script src="../bower_components/jquery/jquery.min.js"></script>
   <script src="../jquery.responsive-menu.js"></script>
   <script>
     $(function() {
       $('#menu').responsiveMenu({
-        breakWidth: 1000
+        breakWidth: 1000,
+        label: false
       });
     });
   </script>
