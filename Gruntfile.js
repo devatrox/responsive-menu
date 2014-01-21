@@ -3,7 +3,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     jshint: {
-      dev: ['Gruntfile.js', 'src/jquery.responsive-menu.js']
+      dev: ['jquery.responsive-menu.js']
     },
     sass: {
       options: {
@@ -14,7 +14,8 @@ module.exports = function(grunt) {
           noCache: true
         },
         files: {
-          'jquery.responsive-menu.css': ['jquery.responsive-menu.scss']
+          'jquery.responsive-menu.css': ['jquery.responsive-menu.scss'],
+          'test/style.css': ['test/style.scss']
         }
       }
     },
@@ -38,13 +39,23 @@ module.exports = function(grunt) {
           'jquery.responsive-menu.min.css': ['jquery.responsive-menu.css']
         }
       }
+    },
+    watch: {
+      css: {
+        files: ['**/*.scss'],
+        tasks: ['sass']
+      },
+      js: {
+        files: '<%= jshint.dev %>',
+        tasks: ['jshint']
+      }
     }
 
   });
 
   require('load-grunt-tasks')(grunt);
 
-  grunt.registerTask('default', ['sass:dev', 'jshint:dev']);
+  grunt.registerTask('default', ['watch']);
   grunt.registerTask('dist', ['sass:dev', 'uglify:dist', 'cssmin:dist']);
 
 };
