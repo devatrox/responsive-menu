@@ -3,6 +3,7 @@ $rm-button-highlight-color: #ff4136 !default;
 $rm-menu-color: #fff !default;
 $rm-menu-highlight-color: #ddd !default;
 $rm-padding: 0.7em !default;
+$rm-radius: 0 !default;
 
 %rm-reset {
   position: relative;
@@ -19,7 +20,6 @@ $rm-padding: 0.7em !default;
   float: none;
   outline: 0;
   text-shadow: none;
-  box-shadow: none;
   list-style: none;
   font-size: 100%;
   line-height: 0.8;
@@ -30,7 +30,28 @@ $rm-padding: 0.7em !default;
   position: relative;
 
   .rm-toggle {
+    @extend %rm-reset;
     display: none;
+    background-color: $rm-button-color;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: $rm-padding;
+    z-index: 200;
+    // line-height: 0.8;
+    border-radius: $rm-radius;
+
+    &:hover {
+      background-color: $rm-button-highlight-color;
+    }
+
+    .label {
+      text-transform: uppercase;
+      font-size: 0.9em;
+      margin-right: 0.5em;
+    }
   }
 
   &.rm-small {
@@ -43,6 +64,8 @@ $rm-padding: 0.7em !default;
     > ul {
       display: none;
       z-index: 100;
+      border-radius: $rm-radius;
+      overflow: hidden;
     }
 
     ul {
@@ -76,20 +99,7 @@ $rm-padding: 0.7em !default;
     }
 
     .rm-toggle {
-      @extend %rm-reset;
-      background-color: $rm-button-color;
-      color: white;
-      cursor: pointer;
-      position: absolute;
-      top: 0;
-      right: 0;
-      padding: $rm-padding;
-      z-index: 200;
       display: block;
-
-      &:hover {
-        background-color: $rm-button-highlight-color;
-      }
     }
 
     &.rm-expanded {
