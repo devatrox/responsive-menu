@@ -27,7 +27,8 @@ Two options:
 <script>
   $(function(){
     $('#menu').responsiveMenu({
-      breakWidth: 800 // optional (default: 600)
+      breakWidth: 800, // optional (default: 600)
+      label: false // optional (default: 'Menu')
     });
   });
 </script>
