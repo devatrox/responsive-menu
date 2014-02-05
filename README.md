@@ -29,6 +29,7 @@ Two options:
     $('#menu').responsiveMenu({
       breakWidth: 800, // optional (default: 600)
       label: false // optional (default: 'Menu')
+      position: 'right' // optional (default: 'left')
     });
   });
 </script>

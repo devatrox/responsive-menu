@@ -27,7 +27,6 @@ $rm-radius: 0 !default;
 }
 
 #responsiveMenu {
-  position: relative;
 
   .rm-toggle {
     @extend %rm-reset;
@@ -35,9 +34,6 @@ $rm-radius: 0 !default;
     background-color: $rm-button-color;
     color: white;
     cursor: pointer;
-    position: absolute;
-    top: 0;
-    right: 0;
     padding: $rm-padding;
     z-index: 200;
     // line-height: 0.8;
@@ -47,7 +43,7 @@ $rm-radius: 0 !default;
       background-color: $rm-button-highlight-color;
     }
 
-    .label {
+    .rm-label {
       text-transform: uppercase;
       font-size: 0.9em;
       margin-right: 0.5em;
@@ -55,17 +51,26 @@ $rm-radius: 0 !default;
   }
 
   &.rm-small {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    max-width: 300px;
+    *zoom: 1;
+
+    &:before, &:after {
+      content: "";
+      display: table;
+    }
+    &:after {
+      clear: both;
+    }
 
     > ul {
       display: none;
       z-index: 100;
       border-radius: $rm-radius;
       overflow: hidden;
+      width: 100%;
+      max-width: 300px;
+      position: absolute;
+      top: 100%;
+      // right: 0;
     }
 
     ul {
@@ -102,10 +107,26 @@ $rm-radius: 0 !default;
       display: block;
     }
 
-    &.rm-expanded {
+    &.rm-open {
       > ul {
         display: block;
       }
+    }
+  }
+
+  &.rm-left {
+    .rm-toggle {
+      float: left;
+    }
+  }
+
+  &.rm-right {
+    .rm-toggle {
+      float: right;
+    }
+
+    > ul {
+      right: 0;
     }
   }
 }
