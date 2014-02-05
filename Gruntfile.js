@@ -15,7 +15,17 @@ module.exports = function(grunt) {
         },
         files: {
           'jquery.responsive-menu.css': ['jquery.responsive-menu.scss'],
-          'test/style.css': ['test/style.scss']
+          'test/style-sass.css': ['test/style.scss']
+        }
+      }
+    },
+    less: {
+      options: {
+        banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("dd-mm-yyyy") %> */\n'
+      },
+      dev: {
+        files: {
+          'test/style-less.css': ['test/style.less']
         }
       }
     },
@@ -42,8 +52,8 @@ module.exports = function(grunt) {
     },
     watch: {
       css: {
-        files: ['**/*.scss'],
-        tasks: ['sass']
+        files: ['**/*.scss', '**/*.less'],
+        tasks: ['sass', 'less']
       },
       js: {
         files: '<%= jshint.dev %>',
@@ -55,7 +65,8 @@ module.exports = function(grunt) {
 
   require('load-grunt-tasks')(grunt);
 
-  grunt.registerTask('default', ['watch']);
-  grunt.registerTask('dist', ['sass:dev', 'uglify:dist', 'cssmin:dist']);
+  grunt.registerTask('compile', ['sass', 'less']);
+  grunt.registerTask('default', ['compile', 'watch']);
+  grunt.registerTask('dist', ['compile', 'uglify', 'cssmin']);
 
 };
