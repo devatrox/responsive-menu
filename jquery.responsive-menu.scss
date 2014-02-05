@@ -51,6 +51,7 @@ $rm-radius: 0 !default;
   }
 
   &.rm-small {
+    position: relative;
     *zoom: 1;
 
     &:before, &:after {

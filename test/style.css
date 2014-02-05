@@ -35,6 +35,7 @@
     font-size: 0.9em;
     margin-right: 0.5em; }
 #responsiveMenu.rm-small {
+  position: relative;
   *zoom: 1; }
   #responsiveMenu.rm-small:before, #responsiveMenu.rm-small:after {
     content: "";
