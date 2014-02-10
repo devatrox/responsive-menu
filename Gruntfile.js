@@ -2,59 +2,87 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+
     jshint: {
-      dev: ['jquery.responsive-menu.js']
+      dev: ['<%= pkg.name %>.js']
     },
+
     sass: {
       options: {
-        banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("dd-mm-yyyy") %> */\n'
+        noCache: true
       },
-      dev: {
-        options: {
-          noCache: true
-        },
+      dist: {
         files: {
-          'jquery.responsive-menu.css': ['jquery.responsive-menu.scss'],
+          '<%= pkg.name %>.css': ['<%= pkg.name %>.scss']
+        }
+      },
+      test: {
+        files: {
           'test/style-sass.css': ['test/style.scss']
         }
       }
     },
+
+    replacements: require('./node_modules/grunt-refactor/replacements').init(grunt),
+
+    refactor: {
+      SassToLess: {
+        options: {
+          replacements: '<%= replacements.regex.sass %>'
+        },
+        files: {
+          '<%= pkg.name %>.less': '<%= pkg.name %>.scss'
+        }
+      }
+    },
+
     less: {
-      options: {
-        banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("dd-mm-yyyy") %> */\n'
-      },
-      dev: {
+      test: {
         files: {
           'test/style-less.css': ['test/style.less']
         }
       }
     },
+
     uglify: {
-      options: {
-        banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("dd-mm-yyyy") %> */\n'
-      },
       dist: {
         files: {
-          'jquery.responsive-menu.min.js': ['jquery.responsive-menu.js']
+          '<%= pkg.name %>.min.js': ['<%= pkg.name %>.js']
         }
       }
     },
+
     cssmin: {
-      options: {
-        keepSpecialComments: 0,
-        banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("dd-mm-yyyy") %> */\n'
-      },
       dist: {
+        options: {
+          keepSpecialComments: 0
+        },
         files: {
-          'jquery.responsive-menu.min.css': ['jquery.responsive-menu.css']
+          '<%= pkg.name %>.min.css': ['<%= pkg.name %>.css']
         }
       }
     },
+
+    usebanner: {
+      dist: {
+        options: {
+          banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("dd-mm-yyyy") %> */\n'
+        },
+        files: {
+          src: [
+            '<%= pkg.name %>.min.css',
+            '<%= pkg.name %>.min.js'
+          ]
+        }
+      }
+    },
+
     watch: {
-      css: {
-        files: ['**/*.scss', '**/*.less'],
-        tasks: ['sass', 'less']
+      styles: {
+        files: ['**/*.scss', 'test/style.less'],
+        tasks: ['compile']
       },
+
       js: {
         files: '<%= jshint.dev %>',
         tasks: ['jshint']
@@ -65,8 +93,8 @@ module.exports = function(grunt) {
 
   require('load-grunt-tasks')(grunt);
 
-  grunt.registerTask('compile', ['sass', 'less']);
+  grunt.registerTask('compile', ['sass', 'refactor', 'less']);
   grunt.registerTask('default', ['compile', 'watch']);
-  grunt.registerTask('dist', ['compile', 'uglify', 'cssmin']);
+  grunt.registerTask('dist', ['compile', 'uglify', 'cssmin', 'usebanner']);
 
 };
