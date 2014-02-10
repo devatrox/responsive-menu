@@ -1,0 +1,91 @@
+@rm-button-color: #111;
+@rm-button-highlight-color: #ff4136;
+@rm-menu-color: #fff;
+@rm-menu-highlight-color: #ddd;
+@rm-padding: 0.7em;
+@rm-radius: 0;
+
+.responsive-menu {
+  position: relative;
+  z-index: 1000;
+  *zoom: 1;
+
+  ul, li {
+    margin: 0;
+    padding: 0;
+  }
+
+  &:before, &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+
+  > ul {
+    display: none;
+    z-index: 100;
+    border-radius: @rm-radius;
+    overflow: hidden;
+    width: 100%;
+    max-width: 300px;
+    position: absolute;
+    top: 100%;
+  }
+
+  li {
+    text-align: left;
+    display: block;
+
+    a {
+      background-color: @rm-menu-color;
+      color: #111;
+      padding: @rm-padding;
+      display: block;
+
+      &:hover {
+        background-color: @rm-menu-highlight-color;
+      }
+    }
+
+    li a {
+      padding-left: @rm-padding * 2;
+    }
+  }
+}
+
+.rm-right {
+  > ul {
+    right: 0;
+  }
+}
+
+.rm-toggle {
+  margin: 0;
+  background-color: @rm-button-color;
+  color: white;
+  cursor: pointer;
+  padding: @rm-padding;
+  border: none;
+  border-radius: @rm-radius;
+  outline: 0;
+
+  &:hover {
+    background-color: @rm-button-highlight-color;
+  }
+
+  .rm-left & {
+    float: left;
+  }
+
+  .rm-right & {
+    float: right;
+  }
+
+  .rm-label {
+    text-transform: uppercase;
+    font-size: 0.9em;
+    margin-right: 0.5em;
+  }
+}
