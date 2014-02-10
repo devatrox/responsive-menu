@@ -3,21 +3,23 @@
 <head>
   <title>jquery.responsive-menu Test</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-  <link rel="stylesheet" href="style-less.css">
-  <script src="../bower_components/jquery/jquery.min.js"></script>
-  <script src="../jquery.responsive-menu.js"></script>
+  <link rel="stylesheet" href="style-sass.css">
+  <script src="../bower_components/zeptojs/src/zepto.js"></script>
+  <script src="../bower_components/zeptojs/src/selector.js"></script>
+  <script src="../bower_components/zeptojs/src/event.js"></script>
+  <script src="../responsive-menu.js"></script>
   <script>
     $(function() {
       $('#menu').responsiveMenu({
         breakWidth: 1000,
-        label: false,
+        // label: false,
         position: 'right'
       });
     });
   </script>
 </head>
 <body>
-  <ul id="menu">
+  <ul id="menu" class="navbar">
     <li><a href="#">Menu 1</a></li>
     <li>
       <a href="#">Menu 2</a>
