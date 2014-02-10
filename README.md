@@ -1,26 +1,26 @@
-jquery.responsive-menu
+responsive-menu
 ======================
 
-A very simple jQuery plugin for responsive menus
+A very simple jQuery/Zepto plugin for responsive menus
 
 ## Installation
 
 Two options:
 
-* With [Bower](http://bower.io/): `bower install jquery.responsive-menu --save`
-* Download the [latest release](https://github.com/devatrox/jquery.responsive-menu/releases)
+* With [Bower](http://bower.io/): `bower install responsive-menu --save`
+* Download the [latest release](https://github.com/devatrox/responsive-menu/releases)
 
 ## Usage
 
 ### Stylesheet
 
 * Include the Stylesheet in your `<head>`
-* Or import the SCSS file via @import
+* Or import the SCSS or Less file via @import
 
 ### Script
 
 * Include the Script in `<head>`
-* Don't forget to include [jQuery](http://jquery.com/) before that!
+* Don't forget to include [jQuery](http://jquery.com/) or [Zepto](http://zeptojs.com/) (with selector and event modules) before that!
 
 ## Markup
 ```
