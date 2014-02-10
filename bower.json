@@ -28,7 +28,7 @@
   "dependencies": {
     "jquery": "~1.9.1"
   },
-  "homepage": "https://github.com/devatrox/jquery.responsive-menu",
+  "homepage": "https://github.com/devatrox/responsive-menu",
   "license": "MIT",
   "devDependencies": {
     "zeptojs": "~1.1.2"
